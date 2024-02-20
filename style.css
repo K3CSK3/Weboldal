@@ -1,0 +1,20 @@
+
+* {
+    background-color: black;
+    color: white;
+}
+
+body {
+    background-image: url(images/background.jpg);
+}
+
+.row {
+    border: 2px white solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.col {
+    border-right: 1px white dashed ;
+    border-left: 1px white dashed ;
+}
