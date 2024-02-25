@@ -20,21 +20,52 @@
 </head>
 
 <body>
-  <h1 id="title"><a href="https://youtube.com/@kecskeman?sub_confirmation=1" , target="_blank">Kecskeman</a> Weboldal
-  </h1>
-  <h2 id="title">Segített: <a href="https://youtube.com/c/HelloandMore?sub_confirmation=1"
-      target="_blank">HelloandMore</a></h2>
-  <div id="background"></div>
+  <div id="background">
+    <h1 id="title">
+      <a href="https://youtube.com/@kecskeman?sub_confirmation=1" , target="_blank">Kecskeman</a> Weboldal
+    </h1>
+    <h2 id="title">
+      Segített: <a href="https://youtube.com/c/HelloandMore?sub_confirmation=1" target="_blank">HelloandMore</a>
+    </h2>
+  </div>
   <div class="container-fluid">
     <div id="content">
       <!--Navigation-->
       <nav class="navbar row sticky-top navbar-expand-lg bg-dark top-sticky-borderstyle">
 
-        <span class="col-3 menu"><img src="images/icon.jpg" id="navbarImage" alt="navbarImage"></span>
+        <span class="col-3 menu">
+          <img src="images/icon.jpg" id="navbarImage" alt="navbarImage">
+        </span>
+
+        <span class="col-3">
+          <button id="themeBtn" onclick="changeTheme()">
+            <img src="images/light.png" id="theme" alt="siteTheme">
+          </button>
+        </span>
+
+
+        <span class="col-3">
+          <button id="languageBtn" onclick="changeLanguage()">
+            <img src="images/flag_HU.png" id="language" alt="LanguageChoice">
+          </button>
+        </span>
+
+
+
+        <span class="col-3 menu">
+          <button id="burgerStyle" class="hamburger dropbtn hamburger--spin" onclick="hamburgerClick()">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span></button>
+        </span>
+
+
+
 
         <ul class="col-6" id="dropdown-menu" name="show">
 
-          <li class="row"><p class="col title" id="title1">Játékok</p></li>
+          <li class="row">
+            <p class="col title" id="title1">Játékok</p>
+          </li>
 
           <li class="row">
             <div class="col leftbtn" onmouseover="title1Expand()" onmouseleave="resetTitle()">Devblog</div>
@@ -42,7 +73,9 @@
           </li>
 
 
-          <li class="row"><p class="col title" id="title2">Közösség</p></li>
+          <li class="row">
+            <p class="col title" id="title2">Közösség</p>
+          </li>
 
           <li class="row">
             <div class="col leftbtn" onmouseover="title2Expand()" onmouseleave="resetTitle()">Hírek</div>
@@ -52,11 +85,6 @@
         </ul>
 
 
-        <span class="col-3 menu">
-          <button id="burgerStyle" class="hamburger dropbtn hamburger--spin" onclick="hamburgerClick()">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span></button>
-        </span>
 
       </nav>
       <!--Website content-->

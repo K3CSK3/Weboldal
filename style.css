@@ -28,6 +28,39 @@ body{
     border-radius: 0px 0px 40px 40px;
 }
 
+#language {
+    width: 100px;
+    border: 2px black dotted;
+}
+#languageBtn:hover>#language {
+    width: 110px;
+}
+#languageBtn {
+    transform: scale(110%);
+    border: none;
+    background-color: transparent;
+    padding: 1px;
+}
+
+
+#theme {
+    width: 90px;
+    background-color: white;
+    border-radius: 100px;
+    display: block;
+}
+#themeBtn {
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border-radius: 100px;
+    padding: 1px;
+    border: none;
+}
+#themeBtn:hover{
+    transform: scale(110%);
+}
+
 h1#title {
     color: white;
     text-align: center;
@@ -95,8 +128,6 @@ h2#title {
 }
 
 .menu {
-    position: relative;
-    top: -80px;
     padding-left: none;
     padding-right: none;
 }
