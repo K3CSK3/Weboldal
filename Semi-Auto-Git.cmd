@@ -1,4 +1,3 @@
-@echo off
 pushd %~0\..
 set /p comment="Commit neve > "
 
@@ -8,9 +7,7 @@ if not %errorlevel%==0 (goto:error)
 git commit -m "%date% - %comment%"
 if not %errorlevel%==0 (goto:error)
 
-@echo on
 git push
-@echo off
 timeout 5 /nobreak
 exit /b
 
