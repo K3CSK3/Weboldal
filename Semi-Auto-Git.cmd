@@ -1,4 +1,5 @@
 pushd %~0\..
+git pull
 set /p comment="Commit neve > "
 
 git add .
