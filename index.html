@@ -20,11 +20,11 @@
 
 <body>
   <div id="background">
-    <h1 id="title">
-      <a href="https://youtube.com/@kecskeman?sub_confirmation=1" , target="_blank">Kecskeman</a> Weboldal
+    <h1 id="h1title">
+      <a class="light" href="https://youtube.com/@kecskeman?sub_confirmation=1" target="_blank">Kecskeman</a> <span class="mainTitle">Weboldal </span>
     </h1>
-    <h2 id="title">
-      Segített: <a href="https://youtube.com/c/HelloandMore?sub_confirmation=1" target="_blank">HelloandMore</a>
+    <h2 id="h2title">
+      <span class="secondTitle">Segített:</span> <a class="light" href="https://youtube.com/c/HelloandMore?sub_confirmation=1" target="_blank">HelloandMore</a>
     </h2>
   </div>
   <div class="container-fluid">
@@ -38,7 +38,7 @@
 
         <span class="col-3">
           <button id="themeBtn" onclick="changeTheme()">
-            <img src="images/light.png" id="theme" alt="siteTheme">
+            <img src="images/dark.png" id="theme" alt="siteTheme">
           </button>
         </span>
 
@@ -63,22 +63,22 @@
         <ul class="col-6" id="dropdown-menu" name="show">
 
           <li class="row">
-            <p class="col title" id="title1">Játékok</p>
+            <p class="col title" id="title1"><span class="dropDownTitleTop">Játékok</span></p>
           </li>
 
           <li class="row">
-            <div class="col leftbtn" onmouseover="title1Expand()" onmouseleave="resetTitle()">Devblog</div>
-            <div class="col rightbtn" onmouseover="title1Expand()" onmouseleave="resetTitle()">Kész</div>
+            <div class="col leftbtn button" onmouseover="title1Expand()" onmouseleave="resetTitle()"><span class="dropDownTopLeft">Devblog</span></div>
+            <div class="col rightbtn button" onmouseover="title1Expand()" onmouseleave="resetTitle()"><span class="dropDownTopRight">Kész</span></div>
           </li>
 
 
           <li class="row">
-            <p class="col title" id="title2">Közösség</p>
+            <p class="col title" id="title2"><span class="dropDownTitleBottom">Közösség</span></p>
           </li>
 
           <li class="row">
-            <div class="col leftbtn" onmouseover="title2Expand()" onmouseleave="resetTitle()">Hírek</div>
-            <div class="col rightbtn" onmouseover="title2Expand()" onmouseleave="resetTitle()">Oldalak</div>
+            <div class="col leftbtn button" onmouseover="title2Expand()" onmouseleave="resetTitle()"><span class="dropDownBottomLeft">Hírek</span></div>
+            <div class="col rightbtn button" onmouseover="title2Expand()" onmouseleave="resetTitle()"><span class="dropDownBottomRight">Oldalak</span></div>
           </li>
 
         </ul>
