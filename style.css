@@ -22,36 +22,42 @@ body{
 
 #content {
     margin-top: none;
+    width: 100%;
     text-align: center;
     background-size: contain;
-    background-color: rgba(0,0,0,0.95);
+    background-color: rgba(0,0,0,0.85);
     border-radius: 0px 0px 40px 40px;
 }
 
 #language {
-    width: 100px;
+    width: 70px;
     border: 2px black dotted;
 }
 #languageBtn:hover>#language {
-    width: 110px;
+    transform: scale(110%);
 }
 #languageBtn {
-    transform: scale(110%);
+    transform: scale(80%);
     border: none;
     background-color: transparent;
     padding: 1px;
 }
 
+.container-fluid {
+    padding: 0px;
+    margin: 0px;
+
+}
 
 #theme {
-    width: 90px;
+    width: 60px;
     background-color: white;
     border-radius: 100px;
     display: block;
 }
 #themeBtn {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     background-color: white;
     border-radius: 100px;
     padding: 1px;
@@ -86,12 +92,13 @@ h1>a:hover, h2>a:hover{
 
 .navbar {
     padding: 10px;
-    height: 120px;
+    height: 90px;
 }
 
 #navbarImage {
-    width: 100px;
-    border-radius: 50px 0px;
+    width: 60px;
+    border-radius: 20px 0px;
+    display: inline;
 }
 
 h2#title {
@@ -111,10 +118,11 @@ h2#title {
 
 .hamburger {
     background-color: aqua;
-    border-radius: 0px 50px;
+    border-radius: 0px 20px;
     position: relative;
-    width: 100px;
-    height: 100px;
+    padding: 1px;
+    width: 60px;
+    height: 60px;
 }
 
 .top-sticky-borderstyle {
@@ -133,13 +141,13 @@ h2#title {
 }
 
 @keyframes borderToRight {
-    0% {border-radius: 50px 0px;}
-    100% {border-radius: 0px 50px;}    
+    0% {border-radius: 20px 0px;}
+    100% {border-radius: 0px 20px;}    
 }
 
 @keyframes borderToLeft {
-    0% {border-radius: 0px 50px;}
-    100% {border-radius: 50px 0px;}    
+    0% {border-radius: 0px 20px;}
+    100% {border-radius: 20px 0px;}    
 }
 
 @keyframes shrink {

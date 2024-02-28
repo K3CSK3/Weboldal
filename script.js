@@ -11,6 +11,7 @@ function hamburgerClick(){
         imageStyle.animationName = "borderToLeft"
     } else {
         dropdownStyle.animationName = "expand"
+        dropdownStyle.display = "block"
         burgerStyle.animationName = "borderToLeft"
         imageStyle.animationName = "borderToRight"
     }
@@ -19,20 +20,15 @@ function hamburgerClick(){
 function closeDropdown(){
     let dropdownStyle = document.getElementById("dropdown-menu").style;
     var hamburger = document.querySelector(".hamburger");
-    let burgerStyle = document.getElementById("burgerStyle").style;
     if (window.innerWidth > 600){
         hamburger.classList.remove("is-active");
 
         dropdownStyle.animationName = "shrink"
-        
-        burgerStyle.display = "none";
-    }
-    else {
-        burgerStyle.display = "block";
     }
 }
 
 window.addEventListener("resize", closeDropdown);
+window.addEventListener("load",closeDropdown)
 
 function title1Expand(){
     document.getElementById("title1").style.transform = "scale(111%)"
@@ -60,7 +56,7 @@ function changeTheme(){
 function setToDarkTheme() {
     var themeBtn = document.getElementById("themeBtn")
     var theme = document.getElementById("theme")
-
+    
     themeBtn.style.backgroundColor = "rgb(52,58,64)"
     theme.style.backgroundColor = "rgb(52,58,64)"
     theme.src = "images/dark.png"
@@ -69,7 +65,7 @@ function setToDarkTheme() {
 function setToLightTheme() {
     var themeBtn = document.getElementById("themeBtn")
     var theme = document.getElementById("theme")
-
+    
     themeBtn.style.backgroundColor = "white"
     theme.style.backgroundColor = "white"
     theme.src= "images/light.png"
@@ -94,4 +90,27 @@ function setToHungarian() {
 function setToEnglish() {
     var language = document.getElementById("language")
     language.src= "images/flag_EN.png"
+}
+
+window.addEventListener("resize", mediumScreenSize);
+window.addEventListener("load", mediumScreenSize);
+
+
+function mediumScreenSize(){
+
+    var hamburger = document.querySelector(".hamburger");
+    let navImage = document.getElementById("navbarImage")
+    let dropDownMenu = document.getElementById("dropdown-menu")
+
+    if (window.innerWidth > 600){
+        navImage.style.animationName = "borderToLeft"
+        hamburger.style.animationName = "borderToRight"
+        navImage.style.display = "none"
+        hamburger.style.display = "none"
+        dropDownMenu.style.display = "none"
+    }
+    else{
+        navImage.style.display = "inline"
+        hamburger.style.display = "inline";
+    }
 }
