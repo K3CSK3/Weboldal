@@ -7,6 +7,10 @@
     animation-fill-mode: forwards;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body{
     background-image: url(videos/yellow-particle.gif);
 }
