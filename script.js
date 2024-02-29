@@ -51,25 +51,6 @@ const data = {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function hamburgerClick(){
     let dropdownStyle = document.getElementById("dropdown-menu").style;
     var hamburger = document.querySelector(".hamburger");
@@ -244,8 +225,6 @@ function setToHungarian() {
 function setToEnglish() {
     var language = document.getElementById("language")
     language.src= "images/flag_EN.png"
-
-    
 
     for (const [key, value] of Object.entries(data["eng"])) {
         document.querySelector(`.${key}`).textContent = value
