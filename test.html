@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+    }
+
+    .newspaper {
+      padding: 0.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      background-color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="newspaper">Spinning newspaper<br />causes dizziness</div>
+  <script>
+    const newspaperSpinning = [
+      { "background": "white", "color": "white" },
+      { "background": "black", "color": "white" },
+    ];
+
+    const newspaperTiming = {
+      duration: 2000,
+      iterations: 1,
+    };
+
+    const newspaper = document.querySelector(".newspaper");
+
+    newspaper.addEventListener("click", () => {
+      newspaper.animate(newspaperSpinning, newspaperTiming);
+    });
+  </script>
+</body>
+
+</html>

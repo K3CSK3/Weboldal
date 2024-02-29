@@ -10,8 +10,22 @@ html {
     overflow-x: hidden;
 }
 
-body{
+body {
     background-image: url(videos/yellow-particle.gif);
+}
+
+.container-fluid {
+    padding: 0px;
+    margin: 0px;
+
+}
+
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #04befe;
+    z-index: 1;
 }
 
 #background {
@@ -29,7 +43,7 @@ body{
     width: 100%;
     text-align: center;
     background-size: contain;
-    background-color: rgba(0,0,0,0.85);
+    background-color: rgba(0, 0, 0, 0.85);
     border-radius: 0px 0px 40px 40px;
 }
 
@@ -37,38 +51,34 @@ body{
     width: 70px;
     border: 2px black dotted;
 }
+
 #languageBtn:hover>#language {
-    transform: scale(110%);
+    transform: scale(120%);
 }
+
 #languageBtn {
-    transform: scale(80%);
+    transform: scale(100%);
     border: none;
     background-color: transparent;
     padding: 1px;
 }
 
-.container-fluid {
-    padding: 0px;
-    margin: 0px;
-
-}
-
 #theme {
-    width: 60px;
+    width: 70px;
     background-color: white;
     border-radius: 100px;
-    display: block;
 }
+
+#themeBtn:hover {
+    transform: scale(100%);
+}
+
 #themeBtn {
-    width: 60px;
-    height: 60px;
+    transform: scale(80%);
+    border: none;
     background-color: white;
     border-radius: 100px;
     padding: 1px;
-    border: none;
-}
-#themeBtn:hover{
-    transform: scale(110%);
 }
 
 #h1title {
@@ -88,6 +98,7 @@ body{
     font-weight: bold;
     text-decoration: none;
 }
+
 .light:hover {
     color: rgb(226, 211, 192);
     font-weight: bold;
@@ -98,6 +109,7 @@ body{
     font-weight: bold;
     text-decoration: none;
 }
+
 .dark:hover {
     color: rgb(27, 26, 24);
     font-weight: bold;
@@ -106,6 +118,7 @@ body{
 .navbar {
     padding: 10px;
     height: 90px;
+    z-index: 0;
 }
 
 #navbarImage {
@@ -132,7 +145,6 @@ body{
 .hamburger {
     background-color: aqua;
     border-radius: 0px 20px;
-    position: relative;
     padding: 1px;
     width: 60px;
     height: 60px;
@@ -156,79 +168,95 @@ body{
 
 @keyframes borderToRight {
     0% {
-    border-radius: 20px 0px;}
+        border-radius: 20px 0px;
+    }
+
     100% {
-    border-radius: 0px 20px;}    
+        border-radius: 0px 20px;
+    }
 }
 
 @keyframes borderToLeft {
     0% {
-    border-radius: 0px 20px;}
+        border-radius: 0px 20px;
+    }
+
     100% {
-    border-radius: 20px 0px;}    
+        border-radius: 20px 0px;
+    }
 }
 
 @keyframes shrink {
     0% {
-    transform: scaleY(100%); display: block;}
+        transform: scaleY(100%);
+        display: block;
+    }
+
     99% {
-    transform: scaleY(0%); display: block;}
+        transform: scaleY(0%);
+        display: block;
+    }
+
     100% {
-    display: none;}
+        display: none;
+    }
 }
 
 @keyframes expand {
-    0%{
-    transform: scaleY(0%); display: block;}
+    0% {
+        transform: scaleY(0%);
+        display: block;
+    }
+
     100% {
-    transform: scaleY(100%);}
+        transform: scaleY(100%);
+    }
 }
 
 .leftbtn {
 
     border-radius: 0px 0px 0px 50px;
-    background-image: linear-gradient(
-        to right,
-        #0ba360,
-        #3cba92,
-        #30dd8a,
-        #2bb673
-      );
-      box-shadow:  -2px 2px 10px 1px rgba(23, 168, 108, 0.75);
+    background-image: linear-gradient(to right,
+            #0ba360,
+            #3cba92,
+            #30dd8a,
+            #2bb673);
+    box-shadow: -2px 2px 10px 1px rgba(23, 168, 108, 0.75);
 }
+
 .rightbtn {
     border-radius: 0px 0px 50px 0px;
-    background-image: linear-gradient(
-        to right,
-        #25aae1,
-        #4481eb,
-        #04befe,
-        #3f86ed
-      );
+    background-image: linear-gradient(to right,
+            #25aae1,
+            #4481eb,
+            #04befe,
+            #3f86ed);
     box-shadow: 2px 2px 10px -1px rgba(65, 132, 234, 0.75);
 }
 
-.leftbtn,.rightbtn{
+.leftbtn,
+.rightbtn {
     width: 160px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     height: 55px;
-    text-align:center;
+    text-align: center;
     padding-top: 12px;
     border: none;
     border-collapse: collapse;
     background-size: 300% 100%;
 }
 
-.leftbtn:hover,.rightbtn:hover {
+.leftbtn:hover,
+.rightbtn:hover {
     transform: scale(120%) translateY(4px);
     font-size: 5vw;
     padding-top: 2px;
     z-index: 1;
 }
 
-.title{
+.title {
     margin-top: 15px;
     margin-bottom: -1px;
     font-size: 6vw;
@@ -239,12 +267,10 @@ body{
     box-shadow:
         -10px 0px 40px 5px rgba(23, 168, 108, 0.5),
         10px 0px 40px 5px rgba(65, 132, 234, 0.5);
-    background-image: linear-gradient(
-        to left,
-        #04befe,
-        #3f86ed,
-        #0ba360,
-        #3cba92
-    );
+    background-image: linear-gradient(to left,
+            #04befe,
+            #3f86ed,
+            #0ba360,
+            #3cba92);
     z-index: 2;
 }
