@@ -50,12 +50,21 @@ const data = {
         :""*/
     }
 }
+
 function loadSite() {
     const loadTime = 2000
+    var loaderCircles = document.querySelectorAll(".loaderCircle")
     var loader = document.getElementById("loader")
     loader.animate([{ opacity: '100%' }, { opacity: '100%' }, { opacity: '0%' }], { duration: loadTime, iterations: 1, fill: 'forwards' })
-    console.log(loader.style.display)
+    
+    for (const circle of loaderCircles) {
+        circle.animate([{ opacity: '100%' }, { opacity: '100%' }, { opacity: '0%' }], { duration: loadTime, iterations: 1, fill: 'forwards' })
+    }
+
     setTimeout(() => {
+        for (const circle of loaderCircles) {
+            circle.style.display = "none"
+        }
         loader.style.display = "none"
     }, loadTime);
 }

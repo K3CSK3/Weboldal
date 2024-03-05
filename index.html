@@ -20,6 +20,32 @@
 
 <body>
   <img id="loader" src="videos/yellow-particle.gif" alt="igen" onload="loadSite()">
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <div class="loaderCircle"></div>
+  <script>
+  document.querySelectorAll(".loaderCircle")
+    .forEach((circle, index) => {
+        circle.style.animationDelay = `${index * 0.02}s`
+        circle.style.borderTopColor = `rgba(75,75,75,${1-index * 0.07})`
+    })
+  </script>
   <div id="background">
     <h1 id="h1title">
       <a class="light" href="https://youtube.com/@kecskeman?sub_confirmation=1" target="_blank">Kecskeman</a> <span

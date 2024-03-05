@@ -1,18 +1,33 @@
+@echo off
 pushd %~0\..
+:question
+set /p pullorpush="Pull vagy Push? (pull/push) > "
+if /i %pullorpush%==pull (goto :pull) 
+if /i %pullorpush%==push (goto :push) else (goto :question)
+
+:pull
+@echo on
 git pull
+@echo off
+goto :exit
+:push
 set /p comment="Commit neve > "
 
+@echo on
 git add .
-if not %errorlevel%==0 (goto:error)
+@echo off
+if not %errorlevel%==0 (goto :exit)
 
+@echo on
 git commit -m "%date% - %comment%"
-if not %errorlevel%==0 (goto:error)
+@echo off
+if not %errorlevel%==0 (goto :exit)
 
+@echo on
 git push
-timeout 5 /nobreak
-exit /b
+@echo off
 
-:error
+:exit
 echo.
 echo.
 timeout 5 /nobreak > nul

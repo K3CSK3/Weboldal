@@ -28,6 +28,30 @@ body {
     z-index: 1;
 }
 
+.loaderCircle {
+    position: fixed;
+    top: 25vw;
+    left: 45vw;
+    border: 1vw solid rgba(0, 0, 0, 0);
+    border-radius: 50vw;
+    width: 10vw;
+    height: 10vw;
+    animation: spin 1s linear infinite;
+    z-index: 2;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(72deg);}
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 #background {
     background-image: url(images/background.jpg);
     background-position: center;
