@@ -9,20 +9,20 @@ const data = {
         dropDownBottomLeft: "News",
         dropDownBottomRight: "Sites",
         changeTheme: "Change Theme",
-        changeLanguage: "Change Language",/*
-       :"",
-       :"",
-       :"",
-       :"",
-       :"",
-       :"",
-       :"",
-       :"",
-       :"",
-       :"",
-       :"",
-       :"",
-       :""*/
+        changeLanguage: "Change Language",
+        introTitle:"Introduction",
+        introduction: "\"Hello and welcome to the Goat Wick channel\" is a familiar sentence but here it is... strange. For the select few people who might take a gander at this site is probably looking for something new, something different, they don't just care about a \"youtuber\" acting like a fool, YOU who are currently reading this are curious what is going on exactly behind that online personality, or maybe you want to take part in searching for clues? Who knows what else can be found not just on this site but in the games, videos, posts. Nothing is stopping you from searching, at least not yet..."
+        /*:"",
+        :"",
+        :"",
+        :"",
+        :"",
+        :"",
+        :"",
+        :"",
+        :"",
+        :"",
+        :""*/
     },
     "hun": {
         mainTitle: "weboldal",
@@ -34,10 +34,10 @@ const data = {
         dropDownBottomLeft: "Hírek",
         dropDownBottomRight: "Oldalak",
         changeTheme: "Téma Váltás",
-        changeLanguage: "Nyelv Váltás",/*
-        :"",
-        :"",
-        :"",
+        changeLanguage: "Nyelv Váltás",
+        introTitle:"Bemutatkozás",
+        introduction: "\"Sziasztok én kecskeman vagyok\", ismerős mondat mivel minden videó így kezdődik, de ez most valahogy... más. Az embereknek az a kis százaléka aki ezt az oldalt megnézi valami más után kutat, nem csak az érdekli ahogy egy \"youtuber\" játsza a bolondot, TE aki most ezt olvasod érdekel hogy mégis mi és ki van \"Kecskeman\" mögött, vagy esetleg részt vennél a nyom keresésben? Ki tudja hogy mit lehet találni nem csak az oldalakon de akár a játékokban, videókban, posztokban. Nincs semmi ami megakadályoz abban hogy ennek utánna járj, vagy... mégis?"
+        /*:"",
         :"",
         :"",
         :"",
@@ -56,7 +56,7 @@ function loadSite() {
     var loaderCircles = document.querySelectorAll(".loaderCircle")
     var loader = document.getElementById("loader")
     loader.animate([{ opacity: '100%' }, { opacity: '100%' }, { opacity: '0%' }], { duration: loadTime, iterations: 1, fill: 'forwards' })
-    
+
     for (const circle of loaderCircles) {
         circle.animate([{ opacity: '100%' }, { opacity: '100%' }, { opacity: '0%' }], { duration: loadTime, iterations: 1, fill: 'forwards' })
     }
@@ -183,6 +183,8 @@ function setToDarkTheme() {
     var h1Title = document.getElementById("h1title")
     var h2Title = document.getElementById("h2title")
     var content = document.getElementById("content")
+    var intro = document.getElementById("intro")
+    var introTitle = document.getElementById("introTitle")
 
     navbar.classList.remove("bg-dark")
     navbar.classList.add("bg-light")
@@ -195,6 +197,9 @@ function setToDarkTheme() {
     h1Title.animate(change, settings)
     h2Title.animate(change, settings)
     content.animate(change, settings)
+    intro.animate(change, settings)
+    introTitle.animate(change, settings)
+    introTitle.style.borderBottomColor = "black"
 
     h2Title.borderTopColor = "black"
 
@@ -227,6 +232,8 @@ function setToLightTheme() {
     var h1Title = document.getElementById("h1title")
     var h2Title = document.getElementById("h2title")
     var content = document.getElementById("content")
+    var intro = document.getElementById("intro")
+    var introTitle = document.getElementById("introTitle")
 
     navbar.classList.remove("bg-light")
     navbar.classList.add("bg-dark")
@@ -240,6 +247,9 @@ function setToLightTheme() {
     h1Title.animate(change, settings)
     h2Title.animate(change, settings)
     content.animate(change, settings)
+    intro.animate(change, settings)
+    introTitle.animate(change, settings)
+    introTitle.style.borderBottomColor = "white"
 
     h2Title.borderTopColor = "white"
 

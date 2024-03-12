@@ -1,44 +1,16 @@
-@echo off
 pushd %~0\..
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> eef0240d0f17d386d2496b2aadc782ec3e74b1e3
-:question
-set /p pullorpush="Pull vagy Push? (pull/push) > "
-if /i %pullorpush%==pull (goto :pull) 
-if /i %pullorpush%==push (goto :push) else (goto :question)
-
-:pull
-@echo on
 git pull
-@echo off
-goto :exit
-:push
 set /p comment="Commit neve > "
 
-@echo on
 git add .
+if not %errorlevel%==0 (goto:error)
 @echo off
-if not %errorlevel%==0 (goto :exit)
 
-@echo on
 git commit -m "%date% - %comment%"
-@echo off
-if not %errorlevel%==0 (goto :exit)
-
-@echo on
-git push
-@echo off
-<<<<<<< HEAD
-
-=======
-=======
-
-@echo off
-
+if not %errorlevel%==0 (goto:error)
 set /p mode="Pull(1) or Push(2)"
 
+git push
 if %mode%==1 (
     git pull
     )
@@ -56,12 +28,5 @@ if %mode%==2 (
 timeout 5 /nobreak
 @echo on
 exit /b
->>>>>>> refs/remotes/Website/main
 
->>>>>>> eef0240d0f17d386d2496b2aadc782ec3e74b1e3
-:exit
-echo.
-echo.
-timeout 5 /nobreak > nul
-pause
-exit /b
+:error
