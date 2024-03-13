@@ -1,7 +1,7 @@
 const data = {
     "eng": {
         mainTitle: "website",
-        secondTitle: "With help form",
+        secondTitle: "With help from",
         dropDownTitleTop: "Games",
         dropDownTopLeft: "Devblog",
         dropDownTopRight: "Done",
@@ -52,7 +52,7 @@ const data = {
 }
 
 function loadSite() {
-    const loadTime = 2000
+    const loadTime = 1000
     var loaderCircles = document.querySelectorAll(".loaderCircle")
     var loader = document.getElementById("loader")
     loader.animate([{ opacity: '100%' }, { opacity: '100%' }, { opacity: '0%' }], { duration: loadTime, iterations: 1, fill: 'forwards' })
@@ -114,27 +114,6 @@ function resetTitle() {
     document.getElementById("title2").style.transform = "scale(105%)"
 }
 
-function changeTheme() {
-    var theme = document.getElementById("theme")
-    if (!`${theme.src}`.endsWith("dark.png")) {
-        setToLightTheme()
-    }
-    else {
-        setToDarkTheme()
-    }
-}
-
-function changeLanguage() {
-    var language = document.getElementById("language")
-    if (`${language.src}`.endsWith("flag_HU.png")) {
-        setToEnglish()
-    }
-    else {
-        setToHungarian()
-    }
-}
-
-
 window.addEventListener("resize", mediumScreenSize);
 window.addEventListener("load", mediumScreenSize);
 
@@ -161,6 +140,16 @@ function mediumScreenSize() {
         hamburger.display = "inline"
         changeLanguageText.display = "none"
         changeThemeText.display = "none"
+    }
+}
+
+function changeTheme() {
+    var theme = document.getElementById("theme")
+    if (!`${theme.src}`.endsWith("dark.png")) {
+        setToLightTheme()
+    }
+    else {
+        setToDarkTheme()
     }
 }
 
@@ -263,32 +252,34 @@ function setToLightTheme() {
     }
 }
 
-function setToHungarian() {
-    var language = document.getElementById("language")
-    language.src = "images/flag_HU.png"
+function changeLanguage() {
+    var language = document.getElementById("language");
 
-    let fullText = ""
-
-    for (const [key, value] of Object.entries(data["hun"])) {
-        document.querySelector(`.${key}`).textContent = value
-        document.querySelector(`.${key}`).textContent = value
+    if (`${language.src}`.endsWith("flag_HU.png")) {
+        languageSwitch("EN", "eng");
+    } else {
+        languageSwitch("HU", "hun");
     }
 }
 
-function setToEnglish() {
-    var language = document.getElementById("language")
-    language.src = "images/flag_EN.png"
+function languageSwitch(lang, dictLang) {
+    var language = document.getElementById("language");
+    language.src = `images/flag_${lang}.png`;
 
-    let i = 0;
-
-    for (const [key, value] of Object.entries(data["eng"])) {
-        document.querySelector(`.${key}`).textContent = ""
-
-        setTimeout(e=>{
-            if (i < value.length) {
-                document.querySelector(`.${key}`).textContent += value.charAt(i)
-                i++;
+    for (const [key, value] of Object.entries(data[`${dictLang}`])) {
+        document.querySelector(`.${key}`).textContent = "";
+        let index = 0;
+        let intervalId = setInterval(() => {
+            if (index >= value.length) {
+                clearInterval(intervalId);
+                return;
             }
-          },50)
+            document.querySelector(`.${key}`).textContent += value[index];
+            index++;
+        }, 1000 / value.length);
+
+        language.addEventListener("click", () => {
+            clearInterval(intervalId);
+        });
     }
 }
