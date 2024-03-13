@@ -197,8 +197,8 @@ function setToDarkTheme() {
     h1Title.animate(change, settings)
     h2Title.animate(change, settings)
     content.animate(change, settings)
-    intro.animate(change, settings)
-    introTitle.animate(change, settings)
+    intro.animate([{},{"background":"#fffbf7a6", "color":"black"}], settings)
+    introTitle.animate([{},{"background":"#fffbf7", "color":"black"}], settings)
     introTitle.style.borderBottomColor = "black"
 
     h2Title.borderTopColor = "black"
@@ -247,8 +247,8 @@ function setToLightTheme() {
     h1Title.animate(change, settings)
     h2Title.animate(change, settings)
     content.animate(change, settings)
-    intro.animate(change, settings)
-    introTitle.animate(change, settings)
+    intro.animate([{},{"background":"#20201fa6", "color":"white"}], settings)
+    introTitle.animate([{},{"background":"#20201f", "color":"white"}], settings)
     introTitle.style.borderBottomColor = "white"
 
     h2Title.borderTopColor = "white"
@@ -267,7 +267,10 @@ function setToHungarian() {
     var language = document.getElementById("language")
     language.src = "images/flag_HU.png"
 
+    let fullText = ""
+
     for (const [key, value] of Object.entries(data["hun"])) {
+        document.querySelector(`.${key}`).textContent = value
         document.querySelector(`.${key}`).textContent = value
     }
 }
@@ -276,8 +279,16 @@ function setToEnglish() {
     var language = document.getElementById("language")
     language.src = "images/flag_EN.png"
 
+    let i = 0;
+
     for (const [key, value] of Object.entries(data["eng"])) {
-        document.querySelector(`.${key}`).textContent = value
+        document.querySelector(`.${key}`).textContent = ""
+
+        setTimeout(e=>{
+            if (i < value.length) {
+                document.querySelector(`.${key}`).textContent += value.charAt(i)
+                i++;
+            }
+          },50)
     }
 }
-

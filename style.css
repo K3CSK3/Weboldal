@@ -40,17 +40,6 @@ body {
     z-index: 2;
 }
 
-.introTitle{
-    font-variant: small-caps;
-    font-weight: bold;
-    border-bottom: #fffbf7 2px solid;
-    background-color: #20201f;
-    margin-bottom: 0;
-}
-.introduction{
-    background-color: #20201fa6;
-}
-
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -309,4 +298,33 @@ body {
             #0ba360,
             #3cba92);
     z-index: 2;
+}
+
+.paragraph {
+    width: 90vw;
+    margin: 5vw;
+}
+
+.paragraph>h2 {
+    font-variant: small-caps;
+    font-weight: bold;
+    border-bottom: #fffbf7 2px solid;
+    background-color: #20201f;
+    border :rgb(27, 26, 24) solid 2px;
+    border-bottom: none;
+    margin-bottom: 0;
+    border-radius: 40px 0px 0px 0px ;
+    padding: 2px;
+    text-align: right;
+    text-decoration: underline;
+}
+
+.paragraph>p{
+    background-color: #20201fa6;
+    border :rgb(27, 26, 24) solid 2px;
+    border-top: none;
+    margin-bottom: 0;
+    border-radius: 0px 0px 40px 0px ;
+    padding: 10px;
+    text-align: justify;
 }
