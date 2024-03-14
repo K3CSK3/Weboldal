@@ -21,7 +21,7 @@ if %choice% == 2 (
 :push
 git add .
 set /p commit="Commit message > "
-git commit -m "%date%-%commit%"
+git commit -m "%date% - %commit%"
 git push
 goto :end
 
