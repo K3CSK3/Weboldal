@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <img id="loader" src="videos/yellow-particle.gif" alt="igen" onload="loadSite()">
+  <img id="loader" src="videos/yellow-particle.gif" alt="" onload="loadSite()">
   <div class="loaderCircle"></div>
   <div class="loaderCircle"></div>
   <div class="loaderCircle"></div>
@@ -46,6 +46,7 @@
         href="https://youtube.com/c/HelloandMore?sub_confirmation=1" target="_blank">HelloandMore</a>
     </h2>
   </div>
+
   <div class="container-fluid">
     <div id="content">
       <!--Navigation-->
@@ -97,7 +98,7 @@
             <div class="col leftbtn button" onmouseover="title2Expand()" onmouseleave="resetTitle()"><span
                 class="dropDownBottomLeft">Hírek</span></div>
             <div class="col rightbtn button" onmouseover="title2Expand()" onmouseleave="resetTitle()"><span
-                class="dropDownBottomRight">Oldalak</span></div>
+                class="dropDownBottomRight">Projektek</span></div>
           </li>
 
         </ul>
@@ -106,27 +107,40 @@
 
       </nav>
       <!--Website content-->
-      <p>
       <div class="paragraph">
         <h2 id="introTitle" class="introTitle">Bemutatkozás</h2>
         <p id="intro" class="introduction">
           "Sziasztok én kecskeman vagyok", ismerős mondat mivel minden videó így kezdődik, de ez most valahogy... más.
-          Az embereknek az a kis százaléka aki ezt az oldalt megnézi valami más után kutat, nem csak az érdekli ahogy egy
-          "youtuber" játsza a bolondot, TE aki most ezt olvasod érdekel hogy mégis mi és ki van "Kecskeman" mögött,
+          Az embereknek az a kis százaléka aki ezt az oldalt megnézi valami más után kutat, nem csak az érdekli ahogy
+          egy "youtuber" játsza a bolondot, TE aki most ezt olvasod érdekel hogy mégis mi és ki van "Kecskeman" mögött,
           vagy esetleg részt vennél a nyom keresésben? Ki tudja hogy mit lehet találni nem csak az oldalakon de akár a
           játékokban, videókban, posztokban. Nincs semmi ami megakadályoz abban hogy ennek utánna járj, vagy... mégis?
         </p>
       </div> <!-- magyar: S,A,T,E,K,K,N | angol: H,G,W,F,Y,O,U,W,N -->
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      </p>
-    </div>
 
-  </div>
+      <button class="element elementdev Devb" onclick="showInfo('Devb')">Devblog</button>
+      <button class="element elementgame Done" onclick="showInfo('Done')">Játékok</button>
+      <button class="element elementproj Projects" onclick="showInfo('Projects')">Projektek</button>
+      <button class="element elementnews News" onclick="showInfo('News')">Hírek</button>
+      
+      <div class="smallDesc">
+        <div class="contents DevbContent">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna id aliquam lacinia, velit nunc
+          ultrices nunc, nec tincidunt nisl justo at nisl.
+        </div>
+        <div class="contents DoneContent">
+          Sed id semper nunc. Nulla facilisi.
+        </div>
+        <div class="contents ProjectsContent">
+          Sed id semper nunc. Nulla facilisi. Sed euismod, urna id
+          aliquam lacinia, velit nunc ultrices nunc, nec tincidunt nisl justo at nisl.
+        </div>
+        <div class="contents NewsContent">
+          Sed id semper nunc. Nulla facilisi.
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br>
+    </div>
 </body>
 
 </html>

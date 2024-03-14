@@ -7,16 +7,16 @@ const data = {
         dropDownTopRight: "Done",
         dropDownTitleBottom: "Community",
         dropDownBottomLeft: "News",
-        dropDownBottomRight: "Sites",
+        dropDownBottomRight: "Projects",
         changeTheme: "Change Theme",
         changeLanguage: "Change Language",
         introTitle:"Introduction",
-        introduction: "\"Hello and welcome to the Goat Wick channel\" is a familiar sentence but here it is... strange. For the select few people who might take a gander at this site is probably looking for something new, something different, they don't just care about a \"youtuber\" acting like a fool, YOU who are currently reading this are curious what is going on exactly behind that online personality, or maybe you want to take part in searching for clues? Who knows what else can be found not just on this site but in the games, videos, posts. Nothing is stopping you from searching, at least not yet..."
+        introduction: "\"Hello and welcome to the Goat Wick channel\" is a familiar sentence but here it is... strange. For the select few people who might take a gander at this site is probably looking for something new, something different, they don't just care about a \"youtuber\" acting like a fool, YOU who are currently reading this are curious what is going on exactly behind that online personality, or maybe you want to take part in searching for clues? Who knows what else can be found not just on this site but in the games, videos, posts. Nothing is stopping you from searching, at least not yet...",
+        elementdev:"Devblog",
+        elementgame:"Games",
+        elementproj:"Projects",
+        elementnews:"News",
         /*:"",
-        :"",
-        :"",
-        :"",
-        :"",
         :"",
         :"",
         :"",
@@ -32,16 +32,16 @@ const data = {
         dropDownTopRight: "Kész",
         dropDownTitleBottom: "Közösség",
         dropDownBottomLeft: "Hírek",
-        dropDownBottomRight: "Oldalak",
-        changeTheme: "Téma Váltás",
-        changeLanguage: "Nyelv Váltás",
+        dropDownBottomRight: "Projektek",
+        changeTheme: "Témaváltás",
+        changeLanguage: "Nyelvváltás",
         introTitle:"Bemutatkozás",
-        introduction: "\"Sziasztok én kecskeman vagyok\", ismerős mondat mivel minden videó így kezdődik, de ez most valahogy... más. Az embereknek az a kis százaléka aki ezt az oldalt megnézi valami más után kutat, nem csak az érdekli ahogy egy \"youtuber\" játsza a bolondot, TE aki most ezt olvasod érdekel hogy mégis mi és ki van \"Kecskeman\" mögött, vagy esetleg részt vennél a nyom keresésben? Ki tudja hogy mit lehet találni nem csak az oldalakon de akár a játékokban, videókban, posztokban. Nincs semmi ami megakadályoz abban hogy ennek utánna járj, vagy... mégis?"
+        introduction: "\"Sziasztok én kecskeman vagyok\", ismerős mondat mivel minden videó így kezdődik, de ez most valahogy... más. Az embereknek az a kis százaléka aki ezt az oldalt megnézi valami más után kutat, nem csak az érdekli ahogy egy \"youtuber\" játsza a bolondot, TE aki most ezt olvasod érdekel hogy mégis mi és ki van \"Kecskeman\" mögött, vagy esetleg részt vennél a nyom keresésben? Ki tudja hogy mit lehet találni nem csak az oldalakon de akár a játékokban, videókban, posztokban. Nincs semmi ami megakadályoz abban hogy ennek utánna járj, vagy... mégis?",
+        elementdev:"Devblog",
+        elementgame:"Játékok",
+        elementproj:"Projektek",
+        elementnews:"Hírek",
         /*:"",
-        :"",
-        :"",
-        :"",
-        :"",
         :"",
         :"",
         :"",
@@ -165,6 +165,7 @@ function setToDarkTheme() {
         fill: "forwards"
     }
     var buttons = document.querySelectorAll(".button")
+    var smallDesc = document.querySelector(".smallDesc")
     var navbar = document.querySelector(".navbar")
     var links = document.getElementsByTagName("a")
     var themeBtn = document.getElementById("themeBtn")
@@ -172,6 +173,7 @@ function setToDarkTheme() {
     var h1Title = document.getElementById("h1title")
     var h2Title = document.getElementById("h2title")
     var content = document.getElementById("content")
+    var elements = document.querySelectorAll(".element")
     var intro = document.getElementById("intro")
     var introTitle = document.getElementById("introTitle")
 
@@ -186,11 +188,15 @@ function setToDarkTheme() {
     h1Title.animate(change, settings)
     h2Title.animate(change, settings)
     content.animate(change, settings)
-    intro.animate([{},{"background":"#fffbf7a6", "color":"black"}], settings)
-    introTitle.animate([{},{"background":"#fffbf7", "color":"black"}], settings)
-    introTitle.style.borderBottomColor = "black"
+    intro.animate({"background":"#fffbf7a6", "color":"black"}, settings)
+    introTitle.animate({"background":"#fffbf7", "color":"black"}, settings)
+    smallDesc.animate({"background":"#fffbf7", "color":"black"}, settings)
 
     h2Title.borderTopColor = "black"
+
+    for (const element of elements) {
+        element.animate({"background":"#fffbf7", "color":"black"}, settings)
+    }
 
     for (const button of buttons) {
         button.style.color = "black"
@@ -214,6 +220,7 @@ function setToLightTheme() {
         fill: "forwards"
     }
     var buttons = document.querySelectorAll(".button")
+    var smallDesc = document.querySelector(".smallDesc")
     var navbar = document.querySelector(".navbar")
     var links = document.getElementsByTagName("a")
     var themeBtn = document.getElementById("themeBtn")
@@ -221,6 +228,7 @@ function setToLightTheme() {
     var h1Title = document.getElementById("h1title")
     var h2Title = document.getElementById("h2title")
     var content = document.getElementById("content")
+    var elements = document.querySelectorAll(".element")
     var intro = document.getElementById("intro")
     var introTitle = document.getElementById("introTitle")
 
@@ -236,11 +244,15 @@ function setToLightTheme() {
     h1Title.animate(change, settings)
     h2Title.animate(change, settings)
     content.animate(change, settings)
-    intro.animate([{},{"background":"#20201fa6", "color":"white"}], settings)
-    introTitle.animate([{},{"background":"#20201f", "color":"white"}], settings)
-    introTitle.style.borderBottomColor = "white"
+    intro.animate({"background":"#20201fa6", "color":"white"}, settings)
+    introTitle.animate({"background":"#20201f", "color":"white"}, settings)
+    smallDesc.animate({"background":"#20201fa6", "color":"white"}, settings)
 
     h2Title.borderTopColor = "white"
+
+    for (const element of elements) {
+        element.animate({"background":"#20201f", "color":"white"}, settings)
+    }
 
     for (const button of buttons) {
         button.style.color = "white"
@@ -282,4 +294,30 @@ function languageSwitch(lang, dictLang) {
             clearInterval(intervalId);
         });
     }
+}
+
+function showInfo(page) {
+    let info = document.querySelector(`.${page}Content`).style
+    let button = document.querySelector(`.${page}`).style
+    let btns = document.querySelectorAll('.element')
+    let contents = document.querySelectorAll('.contents')
+
+
+    for (const btn of btns) {
+        btn.style.width = "fit-content"
+        btn.style.display = "inline"
+        btn.style.borderRadius = "20px"
+        btn.style.paddingBottom = "0px"
+        btn.style.fontSize = "3vw"
+    }
+
+    for (const content of contents) {
+        content.style.display = "none"
+    }
+
+    info.display = "block"
+    button.width = "30%"
+    button.borderRadius = "20px 20px 0px 0px"
+    button.paddingBottom = "5px"
+    button.fontSize = "4vw"
 }

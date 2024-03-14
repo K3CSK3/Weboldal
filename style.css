@@ -301,8 +301,8 @@ body {
 }
 
 .paragraph {
-    width: 90vw;
-    margin: 5vw;
+    width: 95vw;
+    margin: 2.5vw;
 }
 
 .paragraph>h2 {
@@ -314,9 +314,10 @@ body {
     border-radius: 40px 0px 0px 0px ;
     border-bottom: none;
     margin-bottom: 0;
-    padding: 2px;
+    padding-right: 20px;
     text-align: right;
     text-decoration: underline;
+    font-size: 5vw;
 }
 
 .paragraph>p {
@@ -327,12 +328,54 @@ body {
     margin-bottom: 0;
     padding: 10px;
     text-align: justify;
+    font-size: 3vw;
 }
 
-.paragraph>h2:nth-of-type(even) {
+.paragraph:nth-of-type(even)>h2 {
+    padding-right: 0px;
+    padding-left: 20px;
     border-radius: 0px 40px 0px 0px ;
+    text-align: left;
 }
 
-.paragraph>p:nth-of-type(even) {
+.paragraph:nth-of-type(even)>p {
     border-radius: 0px 0px 0px 40px ;
+}
+
+.element {
+    display: inline;
+    border: #20201fa6 2px solid;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: auto;
+    background-color: #20201fa6;
+    text-align: center;
+    width: fit-content;
+    color: white;
+    font-size: 3vw;
+}
+
+.smallDesc {
+    width: 95vw;
+    margin: auto;
+    border: #20201fa6 2px solid;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    background-color: #20201fa6;
+    text-align: center;
+    width: fit-content;
+    color: white;
+    font-size: 3vw;
+}
+
+.element:hover {
+    transform: scale(105%);
+    background-color: #20201f;
+    color: #fffbf7;
+}
+
+.contents {
+    display: none;
+    font-size: 3vw;
 }
