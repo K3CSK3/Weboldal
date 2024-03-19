@@ -1,9 +1,4 @@
 @echo off
-net file 1>nul 2>nul
-if not %errorlevel% == 0 (
-    powershell.exe Start-Process '%~0' -Verb runas
-    exit
-)
 pushd %~0\..
 :choice
 set /p choice="Push(1) vagy pull(2)? > "
