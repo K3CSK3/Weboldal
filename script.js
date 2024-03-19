@@ -52,7 +52,7 @@ const data = {
 }
 
 function loadSite() {
-    const loadTime = 1000
+    const loadTime = 500
     var loaderCircles = document.querySelectorAll(".loaderCircle")
     var loader = document.getElementById("loader")
     loader.animate([{ opacity: '100%' }, { opacity: '100%' }, { opacity: '0%' }], { duration: loadTime, iterations: 1, fill: 'forwards' })
@@ -66,7 +66,43 @@ function loadSite() {
             circle.style.display = "none"
         }
         loader.style.display = "none"
+        showInfo("Devb")
     }, loadTime);
+
+    let interval;
+
+    addEventListener("mouseover", function(e) {
+        if (e.target.id === "smallDesc") {
+            this.clearInterval(interval);
+        }
+    })
+    cycleInfo()
+
+
+    function cycleInfo(){
+        let cycleInfos = 0;
+
+        interval = setInterval(() => {
+            cycleInfos++;
+        switch (cycleInfos) {
+            case 1:
+                showInfo("Devb");
+                break;            
+            case 2:
+                showInfo("Done");
+                break;            
+            case 3:
+                showInfo("Projects");
+                break;            
+            case 4:
+                showInfo("News");
+                break;            
+            default:
+                cycleInfos = 1;
+                showInfo("Devb");
+                break;
+        }
+    },500)}
 }
 
 function hamburgerClick() {
