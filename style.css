@@ -355,6 +355,11 @@ body {
     font-size: 3vw;
 }
 
+#smallDesc{
+    width: 100vw;
+    display: block;
+}
+
 .smallDesc {
     width: 95vw;
     margin: auto;

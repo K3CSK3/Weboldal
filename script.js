@@ -52,9 +52,11 @@ const data = {
 }
 
 function loadSite() {
-    const loadTime = 500
+    const loadTime = 000
+
     var loaderCircles = document.querySelectorAll(".loaderCircle")
     var loader = document.getElementById("loader")
+    var smallDescElements = document.querySelectorAll(".smallDescElement")
     loader.animate([{ opacity: '100%' }, { opacity: '100%' }, { opacity: '0%' }], { duration: loadTime, iterations: 1, fill: 'forwards' })
 
     for (const circle of loaderCircles) {
@@ -71,19 +73,48 @@ function loadSite() {
 
     let interval;
 
-    addEventListener("mouseover", function(e) {
-        if (e.target.id === "smallDesc") {
-            this.clearInterval(interval);
-        }
-    })
     cycleInfo()
 
+    let cycleInfos = 0;
+
+    setInterval(()=>{
+        addEventListener("click", (e)=>{
+            switch (e.target) {
+                case document.getElementById("Devb"):
+                    cycleInfo = 0;
+                    break;
+                case document.getElementById("Done"):
+                    cycleInfo = 1;
+                    break;
+                case document.getElementById("Projects"):
+                    cycleInfo = 2;
+                    break;
+                case document.getElementById("News"):
+                    cycleInfo = 3;
+                    break;
+            }
+        })
+        addEventListener("mouseover", (e)=>{
+            for (const smallDescElement of smallDescElements) {
+                if (e.target === smallDescElement) {
+                    clearInterval(interval)
+                }
+            }
+        })
+        addEventListener("mouseout", (e)=>{
+            for (const smallDescElement of smallDescElements) {
+                if (e.target === smallDescElement) {
+                    clearInterval(interval)
+                    cycleInfo()
+                }
+            }
+        })
+    },1
+    )
 
     function cycleInfo(){
-        let cycleInfos = 0;
-
         interval = setInterval(() => {
-            cycleInfos++;
+        cycleInfos++;
         switch (cycleInfos) {
             case 1:
                 showInfo("Devb");
@@ -102,7 +133,7 @@ function loadSite() {
                 showInfo("Devb");
                 break;
         }
-    },500)}
+    },5000)}
 }
 
 function hamburgerClick() {
